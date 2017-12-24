@@ -1,17 +1,16 @@
 import React, { Component} from 'react';
 
 class Flat extends Component {
-  constructor({ flat }) {
+  constructor(props) {
     super(props)
   }
 
   render() {
     return (
-      <div className="flat">
-        <img src={flat.imageUrl} alt={flat.name} className="card-user"/>
-        <span className="card-category">{`${flat.price} ${flat.priceCurrency}`}</span>
+      <div className="card" style={{backgroundImage: `url(${this.props.flat.imageUrl})`}}>
+        <span className="card-category">{`${this.props.flat.price} ${this.props.flat.priceCurrency}`}</span>
         <div className="card-description">
-          <h2>{flat.name}</h2>
+          <h2>{this.props.flat.name}</h2>
         </div>
         <a href="" className="card-link"></a>
       </div>
