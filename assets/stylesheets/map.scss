@@ -6,3 +6,8 @@
   width: 50px;
   border-radius: 5px;
 }
+
+.map-marker.selected {
+  transform: scale(1.2);
+  z-index: 100;
+}

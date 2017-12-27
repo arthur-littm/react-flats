@@ -5,6 +5,12 @@ class Flat extends Component {
     super(props)
   }
 
+  flatHover = (event) => {
+    console.log(this.props.flat.id);
+    event.preventDefault();
+    this.props.changeMarker(`marker_${this.props.flat.id}`)
+  }
+
   render() {
     return (
       <div className="card" style={{backgroundImage: `url(${this.props.flat.imageUrl})`}}>
@@ -12,7 +18,7 @@ class Flat extends Component {
         <div className="card-description">
           <h2>{this.props.flat.name}</h2>
         </div>
-        <a href="" className="card-link"></a>
+        <a href="" className="card-link" onClick={this.flatHover}></a>
       </div>
     )
   }

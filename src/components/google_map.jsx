@@ -5,7 +5,7 @@ import Marker from './marker.jsx';
 class GoogleMap extends Component {
   static defaultProps = {
     center: {lat: 48.8566, lng: 2.3522},
-    zoom: 13
+    zoom: 11
   };
 
   render() {
@@ -20,6 +20,9 @@ class GoogleMap extends Component {
           lng={flat.lng}
           text={flat.name}
           price={flat.price}
+          selected={this.props.selectedMarker === `marker_${flat.id}`}
+          markerId={`marker_${flat.id}`}
+          key={`marker_${flat.id}`}
         />
       })}
 

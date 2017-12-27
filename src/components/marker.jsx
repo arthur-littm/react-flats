@@ -7,7 +7,7 @@ class Marker extends Component {
 
   render() {
     return (
-      <div className="map-marker">
+      <div className={`map-marker ${this.props.selected ? 'selected' : ''}`}>
         <span>{this.props.price}€</span>
       </div>
     )

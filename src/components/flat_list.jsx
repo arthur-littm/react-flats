@@ -10,7 +10,7 @@ class FlatList extends Component {
     return (
       <div className="flat-list">
         { this.props.flats.map((flat) => {
-          return <Flat flat={flat} key={flat.lat}/>
+          return <Flat flat={flat} key={`flat_${flat.id}`} changeMarker={this.props.changeMarker}/>
         })}
       </div>
     )

@@ -6,14 +6,23 @@ import GoogleMap from './google_map.jsx'
 class App extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      selectedMarker: null
+    }
+  }
+
+  changeMarker = (markerKey) => {
+    this.setState({
+      selectedMarker: markerKey
+    })
   }
 
   render() {
     return (
       <div className="container">
-        <FlatList flats={flats}/>
+        <FlatList flats={flats} changeMarker={this.changeMarker}/>
         <div className="map-container">
-          <GoogleMap flats={flats}/>
+          <GoogleMap flats={flats} selectedMarker={this.state.selectedMarker}/>
         </div>
       </div>
     )
